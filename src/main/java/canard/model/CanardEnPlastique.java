@@ -1,16 +1,17 @@
 package canard.model;
 
+import canard.model.cancan.*;
 import canard.model.vol.ComportementVol;
 import canard.model.vol.NePasVoler;
 
 public class CanardEnPlastique extends Canard {
 
-	public CanardEnPlastique(String nom, ComportementVol comportementVol) {
-		super(nom, comportementVol);
+	public CanardEnPlastique(String nom, ComportementVol comportementVol,ComportementCancan comportementCancan) {
+		super(nom, comportementVol, comportementCancan);
 	}
 
 	public CanardEnPlastique(String nom) {
-		this(nom, new NePasVoler());
+		this(nom, new NePasVoler(), new Coincoin());
 	}
 	
 	@Override
