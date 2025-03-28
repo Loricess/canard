@@ -16,6 +16,6 @@ public class Mandarin extends Canard {
 	
 	@Override
 	public String afficher() {
-		return super.afficher() + "un vran mandarin";
+		return super.afficher() + " vrai mandarin";
 	}
 }

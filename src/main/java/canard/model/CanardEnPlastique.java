@@ -16,6 +16,6 @@ public class CanardEnPlastique extends Canard {
 	
 	@Override
 	public String afficher() {
-		return super.afficher() + "un canard en plastique";
+		return super.afficher() + " canard en plastique";
 	}
 }

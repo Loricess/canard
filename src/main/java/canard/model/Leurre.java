@@ -16,7 +16,7 @@ public class Leurre extends Canard {
 	
 	@Override
 	public String afficher() {
-		return super.afficher() + "un leurre";
+		return super.afficher() + " leurre";
 	}
 	
 }
