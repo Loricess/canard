@@ -16,7 +16,7 @@ public class Colvert extends Canard {
 	
 	@Override
 	public String afficher() {
-		return super.afficher() + "un vrai colvert";
+		return super.afficher() + " vrai colvert";
 	}
 
 }
