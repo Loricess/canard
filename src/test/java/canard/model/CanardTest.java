@@ -13,7 +13,8 @@ class CanardTest {
 
 	private static final String VOLER = "Je vole !";
 	private static final String NE_PAS_VOLER = "Je ne sais pas voler";
-
+	private static final String VOLER_AVEC_UN_REACTEUR = "Je vole avec un réacteur !" ;
+	
 	private static final String CANCAN = "Can-can";
 	private static final String COINCOIN = "Coin-coin";
 	private static final String SILENCE = "...Silence...";
@@ -22,6 +23,7 @@ class CanardTest {
 	Canard leurre;
 	Canard mandarin;
 	Canard canardPlastique;
+	Canard prototypeCanard;
 
 	@BeforeEach
 	private void extracted() {
@@ -29,6 +31,8 @@ class CanardTest {
 		leurre = new Leurre("Danny");
 		mandarin = new Mandarin("Oshidori");
 		canardPlastique = new CanardEnPlastique("Rubber");
+		prototypeCanard = new PrototypeCanard("Michel");
+		
 	}
 
 	@Test
@@ -40,6 +44,7 @@ class CanardTest {
 
 		assertEquals(NE_PAS_VOLER, leurre.effectuerVol());
 		assertEquals(NE_PAS_VOLER, canardPlastique.effectuerVol());
+		assertEquals(NE_PAS_VOLER, prototypeCanard.effectuerVol());
 	}
 
 	@Test
@@ -50,6 +55,8 @@ class CanardTest {
 
 		assertEquals(SILENCE, leurre.effectuerCancan());
 		assertEquals(COINCOIN, canardPlastique.effectuerCancan());
+		assertEquals(SILENCE, prototypeCanard.effectuerCancan());
+
 	}
 
 	@Test
@@ -60,6 +67,8 @@ class CanardTest {
 
 		assertEquals(NAGER, leurre.nager());
 		assertEquals(NAGER, canardPlastique.nager());
+		assertEquals(NAGER, prototypeCanard.nager());
+
 	}
 
 	@Test
@@ -75,6 +84,9 @@ class CanardTest {
 
 		assertEquals("Rubber", canardPlastique.getNom());
 		assertEquals("Je suis un canard en plastique", canardPlastique.afficher());
+		
+		assertEquals("Michel", prototypeCanard.getNom());
+		assertEquals("Je suis un prototype de canard", prototypeCanard.afficher());
 	}
 
 	@Test
@@ -83,6 +95,7 @@ class CanardTest {
 		leurre.changerComportementVol(new VolerAvecDesAiles());
 		colvert.changerComportementVol(new NePasVoler());
 		mandarin.changerComportementVol(new NePasVoler());
+		prototypeCanard.changerComportementVol(new PropulsionAReaction());
 		
 		assertEquals(NE_PAS_VOLER, colvert.effectuerVol());
 
@@ -90,6 +103,7 @@ class CanardTest {
 
 		assertEquals(VOLER, leurre.effectuerVol());
 		assertEquals(VOLER, canardPlastique.effectuerVol());
+		assertEquals(VOLER_AVEC_UN_REACTEUR,prototypeCanard.effectuerVol());
 	}
 	
 	@Test
